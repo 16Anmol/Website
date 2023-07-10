@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Expressing Love for Jiya</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+
+    h1 {
+      color: #e91e63;
+      font-size: 36px;
+      margin-top: 50px;
+    }
+
+    p {
+      color: #333;
+      font-size: 24px;
+      margin-top: 20px;
+    }
+
+    .heart-container {
+      position: relative;
+      display: inline-block;
+      width: 150px;
+      height: 150px;
+      margin-top: 30px;
+      animation: pulse 2s infinite;
+    }
+
+    .heart {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      width: 100px;
+      height: 100px;
+      background-color: #e91e63;
+      animation: beat 1s infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: #e91e63;
+    }
+
+    .heart::before {
+      border-radius: 50px 50px 0 0;
+      top: -50px;
+      left: 0;
+    }
+
+    .heart::after {
+      border-radius: 50px 50px 50px 0;
+      top: 0;
+      left: 50px;
+    }
+
+    @keyframes beat {
+      0% {
+        transform: translate(-50%, -50%) rotate(-45deg) scale(1);
+      }
+      50% {
+        transform: translate(-50%, -50%) rotate(-45deg) scale(1.2);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(-45deg) scale(1);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Love for Jiya</h1>
+  <div class="heart-container">
+    <div class="heart"></div>
+  </div>
+  <p>You are the beat of my heart and the reason for my smile. I love you, Jiya!</p>
+
+  <script>
+    // Interactive Animation - Click on the heart to toggle animation
+    const heartContainer = document.querySelector('.heart-container');
+    const heart = document.querySelector('.heart');
+
+    heartContainer.addEventListener('click', () => {
+      heart.classList.toggle('paused');
+    });
+  </script>
+</body>
+</html>
